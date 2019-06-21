@@ -1,0 +1,239 @@
+<div class="container bg-light text-dark">
+   
+        
+            <h2 class="text-center login-title">Sign up form for Resturant</h2>
+                     
+            <div id="client-error">
+  <strong></strong>
+</div>
+      
+            {{#if error}}
+            <div class="alert alert-danger">
+  <strong>{{error}}</strong>
+</div>
+     {{/if}}      
+          
+                
+                <form class="form-signin" id="signup" method="POST" action="/resturant/signup">
+
+
+                <div class="row">
+                    <div class="col-md-4"> 
+                        <div class="form-group">
+                         <label for="resturant_name">Resturant Name</label>
+                        <input type="text" class="form-control" id="resturant_name" name="resturant_name" placeholder=" Enter resturant Name">
+                          </div>
+                    </div>
+                    <div class="col-md-4"> 
+                        <div class="form-group">
+                         <label for="owner_name">Owner Name</label>
+                        <input type="text" class="form-control" id="owner_name" name="owner_name" placeholder=" Enter Owner Name ">
+                          </div>
+                    </div>
+                    <div class="col-md-4"> 
+                        <div class="form-group">
+                         <label for="email">Email</label>
+                        <input type="text" class="form-control" id="email" name="email" placeholder=" Enter Email ">
+                          </div>
+                    </div>   
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-4"> 
+                        <div class="form-group">
+                         <label for="phone">Phone Number</label>
+                        <input type="number" class="form-control" id="phone" name="phone_no" placeholder=" Enter phone number ">
+                          </div>
+                    </div>
+                    <div class="col-md-4"> 
+                        <div class="form-group">
+                         <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder=" Enter Password ">
+                          </div>
+                    </div>
+                    <div class="col-md-4"> 
+                        <div class="form-group">
+                         <label for="password1">Re-Enter Password</label>
+                        <input type="password" class="form-control" id="password1" name="password1" placeholder=" Re-Enter password  ">
+                          </div>
+                    </div>   
+                </div>
+
+
+
+
+                <div class="row">
+                    <div class="col-md-4"> 
+                        <div class="form-group">
+                         <label for="state">Select State</label>
+                         <select class="form-control" name="state" id="state">
+                            </select>
+                          </div>
+                    </div>
+                    <div class="col-md-4"> 
+                        <div class="form-group">
+                         <label for="city">Select City</label>
+                        <select class="form-control" id="city" name="city">
+                            </select>
+                          </div>
+                    </div>
+                    <div class="col-md-4"> 
+                        <div class="form-group">
+                         <label for="address">Address</label>
+                        <input type="text" class="form-control" id="address" name="address" placeholder=" Enter address ">
+                          </div>
+                    </div>   
+                </div>
+            
+
+               
+                <div class="row">
+                    <div class="col-md-4"> 
+                        <div class="form-group">
+                         <label for="estb-year">Establishment-Year</label>
+                        <input type="number" class="form-control" id="estb-year" name="estb_year" placeholder=" Enter establishment year  ">
+                          </div>
+                    </div>
+                    <div class="col-md-4"> 
+                        <div class="form-group">
+                         <label for="o-time">Opening Time</label>
+                        <input type="text" class="form-control" id="o-time" name="opening_timeing" placeholder=" Enter opening time ">
+                          </div>
+                    </div>
+                    <div class="col-md-4"> 
+                        <div class="form-group">
+                         <label for="c-time">Closing Time</label>
+                        <input type="text" class="form-control" id="c-time" name="close_timeing" placeholder=" Enter closing time ">
+                          </div>
+                    </div>   
+                </div>
+
+
+
+
+                <div class="row">
+                    <div class="col-md-4"> 
+                        <div class="form-group">
+                         <label for="fassi_no">Fssai License No</label>
+                        <input type="text" class="form-control" id="fassi_no" name="fassi_no" placeholder=" Enter fssai License No  ">
+                          </div>
+                    </div>
+                    <div class="col-md-4"> 
+                        <div class="form-group">
+                         <label for="awards">Awards received</label>
+                        <input type="text" class="form-control" id="awards" name="awards" placeholder=" Enter the awards received (optional) ">
+                          </div>
+                    </div>
+                    <div class="col-md-4"> 
+                        <div class="form-group">
+                         <label for="web">Resturant Website</label>
+                        <input type="text" class="form-control" id="web" name="website" placeholder=" Enter website (optional)">
+                          </div>
+                    </div>   
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="d-flex  justify-content-center " style="height:70px">
+    
+                         <div class="align-self-center h2">Cuisines</div>
+   
+                    </div>
+                     </div>
+                    <div class="col-md-2">
+                        <div class="form-check">
+                        <label class="form-check-label">
+                         <input type="checkbox" class="form-check-input" name="cuisines" value="south indian">south indian</label>
+                    </div>
+                    <br>
+                        <div class="form-check">
+                        <label class="form-check-label">
+                         <input type="checkbox" class="form-check-input"  name="cuisines" value="north indian">North indian</label>
+                    </div> 
+                    </div>
+                    <div class="col-md-2">
+                     <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input"  name="cuisines" value="Bengali">Bengali</label>
+                    </div>
+                    <br>
+                        <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input"  name="cuisines" value="Rajasthani">Rajasthani</label>
+                    </div> 
+                    </div>
+                    <div class="col-md-2">
+                         <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input"  name="cuisines" value="chinese">chinese </label>
+                    </div>
+                    <br>
+                        <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input"  name="cuisines" value="Biryanis">Biryanis</label>
+                    </div> 
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input"  name="cuisines" value="mughlai">mughlai</label>
+                    </div> 
+                        <br>
+                        <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input"  name="cuisines" value="kebab">Kebab</label>
+                    </div> 
+                    </div>
+
+                </div>
+<br>
+
+                <div class="row">
+                     <div class="col-md-3"> 
+                        <div class="d-flex justify-content-center"><h5>Non-Veg Availability</h5></div>
+                        
+                         <div class="form-check-inline">
+                        <label class="form-check-label">
+                         <input type="radio" class="form-check-input" name="non_veg" value="yes">Yes
+                         </label>
+                    </div>
+                     <div class="form-check-inline"  style="float: right;">
+                     <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="non_veg" name="optradio">NO
+                        </label>
+                    </div>
+                </div>
+                     <div class="col-md-3"> 
+                        
+                    </div>
+                    <div class="col-md-3"> 
+                        
+                    </div>
+                     <div class="col-md-3"> 
+                        <div class="d-flex justify-content-center"><h5>Online ordering</h5></div>
+                        
+                         <div class="form-check-inline">
+                        <label class="form-check-label">
+                         <input type="radio" class="form-check-input" name="online_ordering" value="yes">Yes
+                         </label>
+                    </div>
+                     <div class="form-check-inline"  style="float: right;">
+                     <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="online_ordering" value="no">no
+                        </label>
+                    </div></div>
+                </div><br>
+                <div class="d-flex justify-content-center">
+                    <div class="col-md-4">
+                <button class="btn btn-lg btn-primary btn-block" type="submit">
+                    Sign up</button>
+            <a href="/login" class="text-center new-account">Already have an account please login </a>
+
+                    </div></div>
+
+                </form>
+        
+    </div>
+
+   <script src="../js/rest_create.js"></script>
