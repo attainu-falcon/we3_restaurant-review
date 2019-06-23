@@ -106,6 +106,18 @@ router.get('/logout', function(req, res){
     req.session.destroy();
     res.render('login',{sucess:'logout sucessfully',title:"Login"});  
   });
+
+/*
+This route will allow user to see comments and reviews of the customer. 
+Note: Since we have no data available currently I am using stubs for 
+current review.
+Later when we will be able to get data from database as user starts reviewing 
+then we will replace the stub with real data.
+*/
+
+router.get("/review_comment_view", (req, res)=>{
+    res.render('review_comment_view', {title: 'View Reviews and Comments'});
+});
   
 
 
