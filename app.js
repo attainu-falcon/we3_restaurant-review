@@ -11,7 +11,7 @@ var app = express();
 
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
-app.use(express.static('public'))
+app.use(express.static('public'));
 app.use(bodyparser.urlencoded());
 app.use(session({secret: "Your secret key"})); 
 
