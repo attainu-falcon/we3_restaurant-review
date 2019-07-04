@@ -78,7 +78,7 @@ router.post('/auth', function(req, res ){
                 req.session.rest_id=result.id;
                 res.redirect("/resturant/home")
                }
-               else res.render('rest_login',{error:'Please check passord or write us cs@mail.com',title:"Login"}); 
+               else res.render('rest_login',{error:'Please check password or write us cs@mail.com',title:"Login"}); 
             });
         }
      });
