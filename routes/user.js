@@ -17,7 +17,7 @@ router.get('/login', function(req, res ){
  
 });
 
-router.get('/signup', function(req, res ){
+router.get('/signup',(req, res )=>{
     res.render('signup',{title:"signup"})
 });
 router.get('/home', function(req, res ){
@@ -27,8 +27,6 @@ router.get('/home', function(req, res ){
       else{  console.log("user fghdgh")
      res.redirect('/login')}
 });
-
-
 
 
 router.post('/reset_password', function(req, res ){
@@ -54,7 +52,6 @@ router.post('/reset_password', function(req, res ){
         });
     });
 });
-
 
 
 router.post('/auth', function(req, res ){
@@ -99,23 +96,9 @@ router.post('/signup',function(req,res){
     });
  });
 
-
-
-
 router.get('/logout', function(req, res){
     req.session.destroy();
     res.render('login',{sucess:'logout sucessfully',title:"Login"});  
   });
   
-
-
-
-
-
-
-
-
-
-
-
 module.exports = router;
