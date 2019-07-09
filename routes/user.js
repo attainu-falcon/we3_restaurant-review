@@ -67,7 +67,7 @@ var afterlogin1=[
     }
 
 ];
-
+/*
 router.get('/home', function(req, res ){
    
     var db = req.app.locals.db; 
@@ -78,7 +78,7 @@ router.get('/home', function(req, res ){
     res.render('user',{title:" Login",data:result,nav:beforelogin})
     });
 });
-
+*/
 
 router.get('/reset_password', function(req, res ){
     if(req.session.user==true){
@@ -240,7 +240,9 @@ router.post('/signup',function(req,res){
 
 
 
- router.get('/test', function(req, res){
+ router.get('/home', function(req, res){
+
+
     var db = req.app.locals.db; 
 
     db.collection('user_reviews').aggregate( [ {  
@@ -251,10 +253,22 @@ router.post('/signup',function(req,res){
 ] ).toArray(function(err, rating) {
 
     db.collection("resturant_details").find({}).toArray(function(err, details) {   
+var resttemp=details;
+var ratingtemp=rating;
+    
+for (var i = 0; i < resttemp.length; i++) {
+    for (var j = 0; j < ratingtemp.length; j++) {
+      if (resttemp[i]["res_branch_id"] == ratingtemp[j]["_id"])
+        resttemp[i].rating = ratingtemp[i].avg.toFixed(1);
 
+      
+   }
+}
 
-res.send(details)
-
+if(req.session.user==true)
+res.render('user',{title:" home",data:resttemp,nav:afterlogin})
+else
+res.render('user',{title:" home",data:resttemp,nav:beforelogin})
 
     });
     
