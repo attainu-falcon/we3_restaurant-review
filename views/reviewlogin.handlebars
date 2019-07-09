@@ -1,0 +1,32 @@
+<div class="container ">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-sm-6 col-md-4 bg-light text-dark mt-4">
+            <h2 class="text-center login-title">Sign in to continue Review</h2>
+                    {{#if sucess}}
+            <div class="alert alert-success text-center">
+  <strong>{{sucess}}</strong>
+</div>
+     {{/if}}  
+            {{#if error}}
+            <div class="alert alert-danger">
+  <strong>{{error}}</strong>
+</div>
+     {{/if}}      
+          
+                
+                <form class="form-signin" method="POST" action="/reviewauth">
+                <input type="hidden" value="{{id}}" name="id"/>
+                <input name="email" type="email" class="form-control" placeholder="Email" required autofocus>
+
+                <input name="password" type="password" class="form-control" placeholder="Password" required>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">
+                    Sign in</button>
+
+                </form>
+            
+            <a href="/signup" class="text-center new-account">Don't have an account </a>
+        </div>
+    </div>
+</div>
+
