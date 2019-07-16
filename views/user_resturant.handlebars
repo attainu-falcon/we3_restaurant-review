@@ -1,0 +1,184 @@
+<img src="{{data.rest_img}}" height="570px" class="d-block w-100">
+
+
+<div class="container">
+
+
+    <div class="container text-center my-4">
+
+        <div class="float-left h1"> {{data.resturant_name}} </div>
+        <div class="float-right"> <span class="badge badge-success"><a
+                    style="font-size: 50px;">{{avg}}</a><a
+                    style=" opacity: 0.5; font-size: 30px;">/5</a></span><br>Based
+            on {{count.total}} votes
+        </div><br>
+
+
+    </div><br><br>
+    <div class="jumbotron jumbotron-fluid bg-light py-5"
+        style="  font-family: 'Lato', sans-serif;">
+
+        <h1 class="text-center mb-5">Overview</h1>
+        <div class="ml-5 row">
+            <div class="col-md-4">
+                <h3>Phone Number</h3>
+                <a style="font-size: 25px; color:#28a745">+91
+                    {{data.phone_no}}</a>
+            </div>
+            <div class="col-md-4">
+                <h3>Opening hours </h3>
+                Every-day {{data.opening_timeing}} – {{data.close_timeing}}
+            </div>
+            <div class="col-md-4">
+                <h3>More Info </h3>
+                <i class="fa fa-check">Non-Vegtarian: {{data.non_veg}}</i><br>
+                <i class="fa fa-check">Home Delivery:
+                    {{data.online_ordering}}</i><br>
+            </div><br>
+        </div>
+        <div class="ml-5 row">
+            <div class="col-md-4">
+                <h3> Cuisines</h3>
+                {{#each cuisines}}
+                <a style="font-size: 15px; color:red">{{this}}, </a>
+                {{/each}}
+            </div>
+            <div class="col-md-4">
+                <h3>Address </h3>
+                {{data.address}},{{data.city}},{{data.state}}
+
+            </div>
+            <div class="col-md-4">
+                <h3> More-details </h3>
+                Awards:{{data.awards}}<br>
+                fassi license:{{data.fassi_no}}<br>
+                {{data.website}}
+            </div>
+        </div>
+
+    </div>
+
+    <div class="review">
+        <div class="jumbotron jumbotron-fluid bg-light py-5"
+            style=" color: black; font-family: 'Lato', sans-serif;">
+            <div class="container">
+                <h1 class="text-center mb-5">Write a Review</h1>
+                <form action="../review" method="POST"
+                    enctype="multipart/form-data">
+                    <input type="hidden" name="branch_id"
+                        value="{{data.res_branch_id}}" />
+
+
+                    <div class="form-group row">
+                        <label for="rating"
+                            class="col-sm-2 col-form-label">Rating</label>
+                        <div class="col-sm-10">
+                            <fieldset class="rating" id="rating">
+                                <label>
+                                    <input type="radio" name="rating"
+                                        value="1" />
+                                    <span class="icon">★</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="rating"
+                                        value="2" />
+                                    <span class="icon">★</span>
+                                    <span class="icon">★</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="rating"
+                                        value="3" />
+                                    <span class="icon">★</span>
+                                    <span class="icon">★</span>
+                                    <span class="icon">★</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="rating"
+                                        value="4" />
+                                    <span class="icon">★</span>
+                                    <span class="icon">★</span>
+                                    <span class="icon">★</span>
+                                    <span class="icon">★</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="rating"
+                                        value="5" />
+                                    <span class="icon">★</span>
+                                    <span class="icon">★</span>
+                                    <span class="icon">★</span>
+                                    <span class="icon">★</span>
+                                    <span class="icon">★</span>
+                                </label>
+
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="review"
+                            class="col-sm-2 col-form-label">Review</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" name="review"
+                                id="review" placeholder="Your Review" rows="5"
+                                required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="photo"
+                            class="col-sm-2 col-form-label">Photo</label>
+                        <div class="col-sm-10">
+                            <input type="file" class="form-control-file"
+                                id="photo" name="img" required>
+                            <p class="small">Preferable size: 400 x 300 pixels
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group mt-5 mb-0"
+                        style="display: flex; justify-content:center">
+                        <div class="">
+                            <button type="submit" class="btn btn-dark"
+                                style="background-color: #282c35;">Post
+                                Review</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container text-center">
+        <h1 class="mt-4 mb-0">Reviews</h1>
+        <hr class="mt-3 mb-5">
+    </div>
+
+    <div class="container mb-4" style="max-height: 750px; overflow:auto;"
+        id="reviews">
+        {{#each comment}}
+
+        <div class="card-body bg-light text-dark">
+            <h5 class="card-title" style="color:#fbb710">{{this.username}}</h5>
+            <div class="blockquote-footer">{{this.date}}</div>
+            <div class="star-ratings-css">
+                <div class="star-ratings-css-top"
+                    style="width: {{calc this.ratings  20}}%">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <div class="star-ratings-css-bottom">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+            </div>
+
+
+
+            <p class="card-text">{{this.review}}</p>
+            <img src="{{this.img}}" height="120px" class="d-block w-120">
+
+        </div>
+        <br>
+
+        {{/each}}
+    </div>
+    <br><br>
+</div>

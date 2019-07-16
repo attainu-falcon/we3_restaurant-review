@@ -1,0 +1,11 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+   {{#if search}}<a class="navbar-brand" href="{{search}}">Search</a>{{/if}}
+  <ul class="navbar-nav ">
+      {{#each nav}}
+
+    <li class="nav-item">
+      <a class="nav-link" href="{{this.link}}">{{this.name}}</a>
+    </li>
+{{/each}}
+  </ul>
+</nav>

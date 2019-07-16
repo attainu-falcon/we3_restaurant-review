@@ -15,7 +15,8 @@
             {{/if}}
 
 
-            <form class="form-signin" method="POST" action="/auth">
+            <form class="form-signin" method="POST" action="/reviewauth">
+                <input type="hidden" value="{{id}}" name="id" />
                 <input name="email" type="email" class="form-control"
                     placeholder="Email" required autofocus>
 
@@ -28,9 +29,6 @@
 
             <a href="/signup" class="text-center new-account">Don't have an
                 account </a>
-            <br />
-            <a href="/resturant/login" class="text-center new-account">Resturant
-                login </a>
         </div>
     </div>
 </div>

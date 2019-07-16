@@ -6110,158 +6110,21 @@ var cities = [
     }
 ];
 
+console.log("helo")
 
-
-const states_distinct =[...new Set(cities.map(st => st.state))]
-states=states_distinct;
+const cities_distinct =[...new Set(cities.map(st => st.name))]
+cities=cities_distinct;
 
 
 
 
 $(document).ready(function(){
-  states.sort();
-  for(var i=0;i<states.length;i++)
-$("#state").append(` <option value=${states[i]} >${states[i]}</option>`);
-
-  
-});
-
-
-$( "#state" ).change(function() {
-  var state = $(this).val()
-  $('#city').find('option').remove()
+  cities.sort();
   for(var i=0;i<cities.length;i++)
-  {
-    if(cities[i].state==state)
-    {
-    $("#city").append(` <option value=${cities[i].name} >${cities[i].name}</option>`);  
-    }
-  }
- 
+$("#cities").append(` <option value=${cities[i]} >`);
+
+  
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-var allowSubmit = false;
-function validate() {
-    var resturant_name=$('input[name=resturant_name').val();
-    var owner_name =$('input[name=contact_name]').val();
-    var phone =$('input[name=phone_no]').val();
-    var statef =$('select[name=state]').val();
-    var city =$('select[name=city]').val();
-    var address =$('input[name=address]').val();
-    var estb_year =$('input[name=estb_year]').val();
-    var opening_timeing =$('input[name=opening_timeing]').val();
-    var close_timeing =$('input[name=close_timeing]').val();
-    var fassi_no =$('input[name=fassi_no]').val();
-    var awards =$('input[name=awards]').val();
-    var web =$('input[name=website]').val();
-    var cuisines =$('input[name=cuisines]:checked').length;
-    var non_veg =$('input[name=non_veg]:checked').length;
-    var online_order =$('input[name=online_ordering]:checked').length;
-
-
-    
-  
-  
-    
-     if(resturant_name.length<1) {
-      error_msg("Resturant name is required for registration ");
-      return false;
-    }
-    else if(owner_name.length<1) {
-        error_msg("Contact name is required for registration");
-        return false;
-      }
-
-      else if(phone.length<1) {
-        error_msg("phone no is required for registration");
-        return false;
-      }
-      else if(phone.length<10) {
-        error_msg("Please enter a valid phone number");
-        return false;
-      }
-    
-     
-     
-      else if(statef==null) {
-        error_msg("state is required for registration");
-        return false;
-      }
-      else if(city==null) {
-        error_msg("city required for registration");
-        return false;
-      }
-      else if(address.length<1) {
-        error_msg("address is required for registration");
-        return false;
-      }
-      
-      else if(estb_year.length<1) {
-        error_msg("Establishment-Year required for registration");
-        return false;
-      }
-      else if(opening_timeing.length<1) {
-        error_msg("Opening Time is required for registration");
-        return false;
-      }
-      else if(close_timeing.length<1) {
-        error_msg("Closing Timerequired for registration");
-        return false;
-      }
-      else if(fassi_no.length<1) {
-        error_msg("Fssai License No required for registration");
-        return false;
-      }
-     
-      else if(cuisines==0) {
-        error_msg("Please select atleast one cuisines for registration");
-        return false;
-      }
-      else if(non_veg==0) {
-        error_msg("please select either yes or not for Non-Veg Availability");
-        return false;
-      }
-      else if(online_order==0) {
-        error_msg("please select either yes or not for  Online ordering");
-        return false;
-      }
-    else {
-      
-     allowSubmit = true;
-    }
-     
-  }
-  
-  
-  function error_msg(error)
-  {
-    $("#client-error").addClass("alert alert-danger text-center");
-    $("#client-error").text(error);
-    return
-  }
-
-
- 
-  $("form#signup").on('submit', function(e){
-    
-    if (!allowSubmit) {
-        e.preventDefault();
-    
-        validate() ;
-    }
-   
-});
 

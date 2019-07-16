@@ -1,20 +1,25 @@
 {
-  "name": "exp3",
+  "name": "app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
+    "cloudinary": "^1.14.0",
+    "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "express-session": "^1.16.2",
     "mongodb": "^3.2.7",
-    "mongodb-autoincrement": "^1.0.1"
+    "mongodb-autoincrement": "^1.0.1",
+    "multer": "^1.4.1",
+    "node-datetime": "^2.1.2"
   }
 }
